@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../img/cropped-EBBIM-iconedosite-220325-192x192.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Cadastro IFC</title>
+</head>
+<body>
+    <div id="viewer-container" class="hidden"></div>
+    <nav class="navbar">
+        <img src="../img/EBBIM-HEADER-220325.png" alt="Logo EBBIM">
+        <h3>Edite as propriedades do seu projeto IFC</h3>
+    </nav>
+
+    <div class="view-model">
+        <button id="toggle-model" class="basic-button">MODELO</button>
+    </div>
+
+    <div class="container" id="container">
+        <div class="entry-container">
+            <div class="choose-file-container">
+                <div class="form-control">
+                    <div class="choose-file-label">
+                        <label for="file">SELECIONE UM ARQUIVO IFC</label>
+                        <i id="info-button" class="bi bi-info-circle popup"></i>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div class="modal-container">
+                                    <label for="file">BAIXE UM MODELO DE EXEMPLO</label>
+                                    <button id="download-sample" class="basic-button">BAIXAR</button>
+                                </div>                             
+                            </div>
+                        </div>
+                    </div>
+                    <input id="file-input" type="file" accept=".ifc" >
+                </div>
+            </div>
+            <div class="add-property-container">
+                <div class="form-control">
+                    <label for="conjunto">CONJUNTO DE PROPRIEDADES</label>
+                    <input type="text" id="nome-conjunto" placeholder="Digite o nome do conjunto">
+                    <button id="add-property-set" class="basic-button">CRIAR</button>
+                </div>
+                <div class="form-control">
+                    <label for="conjunto">PROPRIEDADES</label>
+                    <input type="text" id="nome-propriedade" placeholder="Digite o nome da propriedade">
+                    <input type="text" id="description-propriedade" placeholder="Digite a descrição da propriedade">
+                    <button id="add-single-value" class="basic-button">CRIAR</button>
+                </div>
+                <div class="form-control">
+                    <button id="save-file" class="basic-button">SALVAR ALTERAÇÕES</button>
+                </div>
+            </div>
+        </div>
+        <div class="property-set-container">
+            <div class="list-container">
+                <div class="top-container">
+                    <label for="title">CONJUNTO DE PROPRIEDADES</label>
+                    <div class="descricao">
+                        <p id="property-set-description"></p>
+                    </div>
+                </div>                
+                <div class="list" id="property-list"></div>
+            </div>
+        </div>
+        <div class="single-value-container">
+            <div class="list-container">
+                <div class="top-container">
+                    <label for="title">PROPRIEDADES</label>
+                    <div class="descricao">
+                        <p id="single-value-description"></p>
+                    </div>
+                </div>
+                <div class="list" id="single-value-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© EBBIM - Todos os direitos reservados</p>
+    </footer>
+    <script src="/ifc-fce/dist/bundle.js"></script>
+</body>
+</html>
